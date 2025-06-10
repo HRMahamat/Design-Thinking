@@ -1,4 +1,5 @@
 import os, time, re, implicit
+import findspark
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -41,7 +42,8 @@ ms  = ["Sélectionnez le mois", "Aucun",
 # ------------------------------------------------------------------
 @st.cache_resource
 def init_spark():
-    return SparkSession.builder.appName("EComCameroonIA").master("local[*]").config("spark.hadoop.fs.defaultFS", "file:///").getOrCreate()
+    findspark.init()
+    return SparkSession.builder.appName("EComCameroonIA").getOrCreate()
 
 @st.cache_resource
 def load_and_clean():
