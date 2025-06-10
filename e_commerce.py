@@ -88,7 +88,7 @@ pdf_raw = load_and_clean()
 # --------------------------------------------------------------------------------------------------
 # 2️⃣ – SIDEBAR & FILTRES
 # --------------------------------------------------------------------------------------------------
-st.sidebar.title("📊 E-Commerce IA")
+st.sidebar.title("📊 CommerceGenius")
 page = st.sidebar.radio("", [
     "Accueil","Analytics Live","Segmentation",
     "Recommandations","Alertes","Visualisations",
@@ -116,10 +116,10 @@ if m not in (ms[0],ms[1]): sel_raw = sel_raw[ sel_raw[month_col]==m ]
 # 3️⃣ – ACCUEIL
 # --------------------------------------------------------------------------------------------------
 if page=="Accueil":
-    st.markdown("## 🎯 Solution IA – Comportement Client")
+    st.markdown("## 🎯 CommerceGenius – Comportement Client")
     st.markdown("Tableau de bord E-Commerce Cameroun : en temps réel, segmentation, recommandations.")
-    st.image("https://www.fmlogistic.ro/app/uploads/sites/14/2024/02/Article-1-wp-omnichannel-768x549.jpg",
-             use_container_width=True)
+    img = Image.open("image.jpg")
+    st.image(img.resize((1000, int((float(img.size[1]) * float((700 / float(img.size[0])))))), Image.FILTERED), use_container_width=False)
 
 # --------------------------------------------------------------------------------------------------
 # 4️⃣ – ANALYTICS LIVE
