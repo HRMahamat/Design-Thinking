@@ -80,7 +80,6 @@ def load_and_clean():
     # Abandon flag
     ab_col = [c for c in df.columns if "abandonn" in c.lower()][0]
     df["Abandon_flag"] = df[ab_col].map(lambda x: 0 if str(x).lower().startswith("non") else 1)
-    st.write(df)
     return df
 
 pdf_raw = load_and_clean()
@@ -132,6 +131,7 @@ elif page=="Analytics Live":
                  title="Répartition par tranche d'âge",
                  labels={age_col:"Âge", "count":"Clients"})
     st.plotly_chart(fig, use_container_width=True)
+    st.write(df)
 
 # --------------------------------------------------------------------------------------------------
 # 5️⃣ – SEGMENTATION DYNAMIQUE
