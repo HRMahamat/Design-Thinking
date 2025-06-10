@@ -1,5 +1,4 @@
 import os, time, re, implicit
-import findspark
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -14,6 +13,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, when
 from pyspark.ml.feature import VectorAssembler, StandardScaler
 from pyspark.ml.evaluation import ClusteringEvaluator
+import findspark
 
 # ------------------------------------------------------------------
 # 0️⃣ – CONFIG & CSS
