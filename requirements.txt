@@ -1,4 +1,6 @@
-﻿streamlit
+pyspark
+findspark
+streamlit
 implicit
 pandas
 plotly
@@ -6,5 +8,3 @@ numpy
 pillow
 scikit-learn
 scipy
-pyspark
-findspark
